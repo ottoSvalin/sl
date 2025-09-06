@@ -98,6 +98,7 @@ static const char *network_list_cmd[] = {"netwctl", NULL};
 static const char *network_manage_cmd[] = {"netwctl", "--manage-current", NULL};
 static const char *emoji_cmd[] = {"emojipicker", NULL};
 static const char *toggle_theme_cmd[] = {"themectl", "-t", NULL};
+static const char *file_browser_cmd[] = {"st", "-e", "ranger", NULL};
 
 /*
  * Xresources preferences to load at startup
@@ -150,6 +151,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XF86XK_Sleep,             spawn,          {.v = power_cmd}},
 	{ MODKEY|ShiftMask,             XF86XK_Sleep,             spawn,          {.v = toggle_theme_cmd}},
 	{ 0,                            XF86XK_WakeUp,            spawn,          {.v = tablet_exit_cmd}},
+	{ MODKEY,                       XK_r,                     spawn,          {.v = file_browser_cmd} },
 	{ MODKEY,                       XK_i,                     spawn,          {.v = emoji_cmd} },
 	{ MODKEY,                       XK_o,                     spawn,          {.v = bookmark_paste_cmd} },
 	{ MODKEY|ShiftMask,             XK_o,                     spawn,          {.v = bookmark_copy_cmd} },
